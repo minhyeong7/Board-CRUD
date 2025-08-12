@@ -1,0 +1,1 @@
+INSERT INTO article (title, content) VALUES ('이것은 제목이다','그렇다면 이것 내용');

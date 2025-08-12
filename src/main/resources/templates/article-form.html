@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새 글</title>
 </head>
 <body>
-
+<h1>새 글 작성</h1>
+<form method="post" action="/articles">
+    <div>
+        <label>제목
+            <input type="text" name="title" required>
+        </label>
+    </div>
+    <div>
+        <label>내용
+            <textarea name="content" rows="8" required></textarea>
+        </label>
+    </div>
+    <button type="submit">저장</button>
+    <a href="/articles">목록</a>
+</form>
 </body>
 </html>
