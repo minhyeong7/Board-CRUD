@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf" th:content="${_csrf.token}">
+    <meta name="_csrf_header" th:content="${_csrf.headerName}">
     <title>새 글</title>
 </head>
 <body>
@@ -10,16 +12,19 @@
 <form method="post" action="/articles">
     <div>
         <label>제목
-            <input type="text" name="title" required>
+            <input type="text" id="title" name="title" required>
         </label>
     </div>
     <div>
         <label>내용
-            <textarea name="content" rows="8" required></textarea>
+            <textarea id="content" name="content" rows="8" required></textarea>
         </label>
     </div>
-    <button type="submit">저장</button>
+    <button type="button" id="create-btn">저장</button>
     <a href="/articles">목록</a>
+
 </form>
+
+<script src="/js/article.js" defer></script>
 </body>
 </html>

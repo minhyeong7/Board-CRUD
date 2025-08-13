@@ -33,7 +33,9 @@ public class ArticleService {
     public Article findById(Long id){
         return articleRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Article not found:" + id));
-        // ID로 게시글 조회, 없으면 예외 발생
+
+       // id가 존재하면 → 해당 ID에 해당하는 Article 객체를 반환합니다.
+       // id가 존재하지 않으면 → IllegalArgumentException 예외를 발생시킵니다
     }
 
     @Transactional

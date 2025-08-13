@@ -54,7 +54,7 @@ public class ArticleViewController {
     }
 
     @PostMapping("/articles/{id}/delete") // 게시글 삭제 요청
-    public String delete(@PathVariable Long id) {
+    public String delete(@PathVariable Long id) { // @PathVariable은 URL 경로에 있는 {id} 값을 자바 변수 id에 매핑해주는 역할
         articleService.delete(id); // 해당 게시글 삭제 처리
         return "redirect:/articles"; // 삭제 후 게시글 목록 페이지로 리다이렉트
     }
