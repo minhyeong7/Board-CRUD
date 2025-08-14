@@ -22,5 +22,8 @@ public class CustomUserDetailsService implements UserDetailsService { // Spring 
                 .password(u.getPassword()) // 비밀번호 설정 (BCrypt 인코딩된 값)
                 .roles(u.getRole()) // 권한(ROLE_...) 설정, 예: "USER" → ROLE_USER
                 .build(); // UserDetails 객체 완성
-    }
+    } // Authentication 객체로 생성
 }
+
+// 로그인 시도 -> 스프링이 낚아챔 -> 이클래스에서 일단 유저엔티티로 담아온 다음 UserDetails 형태로 옮겨 담아서
+// 거기서 또 꺼내서 결국은 Authentication 객체로 저장

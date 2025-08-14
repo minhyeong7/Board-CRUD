@@ -20,7 +20,7 @@ public class UserService { // 회원 관련 비즈니스 로직 처리 클래스
 
         // 이메일 중복 검사
         if (userRepository.existsByEmail(req.getEmail())) // 이미 같은 이메일이 DB에 있으면
-            throw new IllegalArgumentException("이미 가입된 이메일입니다."); // 예외 발생
+            throw new IllegalArgumentException("이미 가입된 이메일입니다."); // 예외 발생 밑에 있는 문장 실행 안함
 
         // 회원 정보 저장
         userRepository.save(
